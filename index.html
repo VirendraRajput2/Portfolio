@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virendra Rajput | Data Analyst Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DPbkUjE8P7z8X3irMRHkRkNvztNFVQVw1Gc7YCOUMIqFZRMVAb9YSEuxsjjlHzvEihQ/HUkNzxaz2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --bg-light: #fdfdfd;
+      --bg-dark: #121212;
+      --text-light: #333;
+      --text-dark: #eee;
+      --primary: #0077ff;
+    }
+    *,*::before,*::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: var(--bg-light); color: var(--text-light);
+      transition: background .4s, color .4s;
+    }
+    body.dark {
+      background: var(--bg-dark); color: var(--text-dark);
+    }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.3rem 4%; position: sticky; top:0;
+      background: inherit; backdrop-filter: blur(8px);
+      z-index:100;
+    }
+    header h1 { font-size:1.4rem; letter-spacing:.5px; }
+    nav a {
+      margin-left:1.25rem; text-decoration:none; color:inherit;
+      font-weight:500; position:relative;
+    }
+    nav a::after {
+      content:''; position:absolute; width:0; height:2px;
+      background:var(--primary); left:0; bottom:-4px;
+      transition:.3s;
+    }
+    nav a:hover::after, nav a.active::after { width:100%; }
+    .toggle {
+      cursor:pointer; border:2px solid var(--primary);
+      padding:.35rem .8rem; border-radius:6px; background:none;
+      font-size:1rem;
+    }
+    @media(max-width:768px){
+      header { flex-direction:column; gap:1rem; }
+      nav a { margin-left:.85rem; }
+    }
+    section { padding:4rem 4%; }
+    .hero-container {
+      display:flex; align-items:center; justify-content:center;
+      flex-wrap:wrap; gap:2rem; text-align:center;
+    }
+    .profile-img {
+      width:170px; height:170px; border-radius:50%;
+      object-fit:cover; box-shadow:0 4px 15px rgba(0,0,0,.15);
+    }
+    .hero-text h2 {
+      font-size:2.4rem; margin-bottom:1rem;
+    }
+    .hero-text p {
+      max-width:700px; font-size:1.1rem; line-height:1.65;
+    }
+
+     .about-content {
+      margin-top: 2.5rem;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .about-content h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .about-content p { margin-bottom: 1rem; text-align: justify; }
+
+    .btn {
+      display:inline-block; background:var(--primary);
+      color:#fff;padding:.75rem 1.4rem;border-radius:8px;
+      margin-top:1.4rem;text-decoration:none;
+    }
+    .list-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1.5rem;
+    }
+    .card,.skill-tag {
+      background:rgb(212, 230, 250);padding:1rem 1.25rem;
+      border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,.05);
+    }
+    body.dark .card, body.dark .skill-tag { background:rgb(46, 44, 45); }
+    .card h3 { font-size:1.05rem; margin-bottom:.4rem; }
+    .card span { font-size:.85rem; opacity:.85; }
+    .skill-tag {
+      display:inline-block; margin:.25rem .35rem .35rem 0;
+      font-size:.85rem;
+    }
+    .contact-list { list-style:none; margin-top:1.3rem; }
+    .contact-item { margin:.6rem 0; }
+    .contact-item a { color:inherit; text-decoration:none; }
+    .contact-item i { margin-right:.5rem; color:var(--primary); }
+    footer {
+      padding:2rem 4%; text-align:center; background:#efefef;
+      margin-top:2rem;
+    }
+    body.dark footer { background:#1a1a1a; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Virendra Rajput</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="themeToggle" class="toggle">🌙</button>
+  </header>
+
+  <section id="about">
+    <div class="hero-container">
+      <img src="assets/profile.jpg" alt="Virendra Rajput portrait" class="profile-img"/>
+      <div class="hero-text">
+        <h2>Data Analyst &amp; Storyteller</h2>
+        <p id="profileSummary"></p>
+        <a href="#projects" class="btn">See My Work</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Extended About Content -->
+    <div class="about-content">
+      <h3>Welcome to my portfolio</h3>
+      <p>I am <strong>Virendra Rajput</strong>, currently working as a Data Analyst at <em>LYCEUM GURUKUL PVT. LTD</em> and formerly a Software Engineer at Kellton Tech Solutions India. Although my academic background is in Mechanical Engineering, my passion for numbers and patterns led me to discover a natural talent for data analysis—and I have pursued it ever since.</p>
+
+      <p>I have over a year of industry experience transforming raw information into actionable insights. My toolkit spans <strong>Power BI, MySQL, PostgreSQL, Advanced Excel, Python, Web Scraping</strong>, and <strong>Google Sheets</strong>, enabling me to work comfortably with complex datasets and deliver clear stories that drive better business decisions.</p>
+
+      <p>I’m also familiar with the Microsoft Power Platform: <strong>Power Apps</strong> lets me craft intuitive user interfaces, while <strong>Power Automate</strong> streamlines repetitive workflows—boosting efficiency and reducing the risk of human error.</p>
+
+      <p>Previously, I honed my visual‑storytelling skills as a <em>Data Visualisation Intern</em> at <strong>SLA CONSULTANTS INDIA</strong>, where I focused on dashboard design and presentation techniques.</p>
+
+      <p>Beyond the office, I enjoy open‑data challenges. My work was recognised among the <strong>top 20</strong> entries in the Transportation &amp; Mobility domain by Codebasics—an achievement that fuels my drive to keep learning and experimenting with new datasets.</p>
+
+      <p>Thank you for visiting my portfolio! I’m excited to connect with recruiters and welcome freelance opportunities that let me solve real‑world problems through data.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div id="skillGroups" class="list-grid"></div>
+  </section>
+
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <div id="experienceList" class="list-grid"></div>
+  </section>
+
+  <section id="projects">
+    <h2>Selected Projects</h2>
+    <div id="projectsList" class="list-grid"></div>
+  </section>
+
+  <section id="education">
+    <h2>Education &amp; Certifications</h2>
+    <div id="educationList" class="list-grid"></div>
+    <h3 style="margin-top:2rem;">Certifications &amp; Courses</h3>
+    <ul id="certList"></ul>
+    <a href="docs/Virendra_Rajput_Resume.pdf" class="btn" download>Download Full Resume</a>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <ul class="contact-list">
+      <li class="contact-item">
+        <i class="fa-solid fa-envelope"></i><a href="mailto:virendrarajput041@gmail.com">virendrarajput041@gmail.com</a>
+      </li>
+      <li class="contact-item">
+        <i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/virendrarajput" target="_blank">LinkedIn</a>
+      </li>
+      <li class="contact-item">
+        <i class="fa-brands fa-github"></i><a href="https://github.com/VirendraRajput" target="_blank">GitHub</a>
+      </li>
+    </ul>
+  </section>
+
+  <footer><p>&copy; 2025 Virendra Rajput</p></footer>
+
+  <script>
+    const data = {
+      summary: `Result-driven Data Analyst with 2+ years of experience in data visualization, statistical analysis, and business intelligence. Proficient in SQL, Power BI, Tableau, Excel, and Python, with hands-on expertise in ETL pipelines, data cleaning, and dashboard creation. Adept at transforming complex datasets into actionable insights to support strategic decision-making.`,
+      skills: {
+        "Programming": ["Python (Pandas, NumPy)", "SQL"],
+        "Tools & Tech": ["Power BI", "Tableau", "Excel (Advanced)", "DAX", "Power Query", "ETL", "Looker Studio", "AWS"],
+        "Visualization": ["Power BI", "Tableau", "Looker", "Google Sheets", "Jupyter Notebook", "Power Apps"],
+        "Databases": ["MySQL", "PostgreSQL"],
+        "Other": ["JIRA", "GitHub", "VS Code", "Problem-Solving", "Critical Thinking", "Business Analysis", "AI Tools"]
+      },
+      experience: [
+        {
+          role: "Data Analyst",
+          company: "LYCEUM GURUKUL PVT. LTD",
+          period: "Oct 2023 – Present",
+          location: "Delhi, India",
+          bullets: [
+            "Developed interactive dashboards in Excel for clear project summaries.",
+            "Implemented advanced visualizations in Power BI & Tableau to boost decision-making.",
+            "Built predictive models forecasting weekly sales, reducing inventory cost by 10%.",
+            "Created 10+ Power BI dashboards, cutting reporting time by 40%."
+          ]
+        },
+        {
+          role: "Software Engineer",
+          company: "Kellton Tech Solutions Ltd.",
+          period: "Feb 2022 – Sep 2023",
+          location: "Gurugram, India",
+          bullets: [
+            "Designed client-focused solutions on Linux/Solaris, reducing deployment time by 30%.",
+            "Enhanced web interfaces (HTML/CSS/JS) boosting load speed by 25%.",
+            "Introduced code review best practices, cutting bug count by 40%."
+          ]
+        },
+        {
+          role: "Software Engineer",
+          company: "New Indictrans Technologies Pvt. Ltd.",
+          period: "Dec 2021 – Feb 2022",
+          location: "Pune, India",
+          bullets: [
+            "Developed an ERP system increasing efficiency by 30%.",
+            "Built custom ERP modules, reports, and dashboards."
+          ]
+        },
+        {
+          role: "Python & Django Intern",
+          company: "Kangaroo Software Pvt. Ltd.",
+          period: "Jul 2021 – Dec 2021",
+          location: "Indore, India",
+          bullets: [
+            "Developed robust Django applications—enhancing problem-solving skills."
+          ]
+        },
+        {
+          role: "Software Consultant Engineer",
+          company: "Red Vision Computer Technologies Pvt. Ltd.",
+          period: "Jan 2020 – Jun 2021",
+          location: "Indore, India",
+          bullets: [
+            "Resolved technical data issues ensuring 95% client satisfaction.",
+            "Managed multiple open issues simultaneously."
+          ]
+        }
+      ],
+      projects: [
+        {
+          title: "Data Visualization with Power BI",
+          tech: "Power BI, DAX, Power Query",
+          date: "Jan 2025",
+          description: "Interactive dashboards transforming raw data into insights and storytelling visuals."
+        },
+        {
+          title: "Sales Performance Dashboard",
+          tech: "Power BI, SQL, DAX, Power Query",
+          date: "Dec 2024",
+          description: "Analyzed sales trends & customer behavior enabling data-driven decisions."
+        },
+        {
+          title: "Data Cleaning & Transformation",
+          tech: "Excel, SQL, Power Query",
+          date: "Jun 2024",
+          description: "Reduced data errors by 95% via rigorous cleaning & transformation pipelines."
+        },
+        {
+          title: "Superstore Sales Analysis",
+          tech: "Power BI, DAX, SQL, Excel",
+          date: "Apr 2024",
+          description: "Processed 100K+ transactions with star-schema modelling; built a 30% faster KPI dashboard."
+        },
+        {
+          title: "Interactive Tableau Dashboard – Brunox Electronic",
+          tech: "Tableau, Excel, SQL",
+          date: "Jan 2024",
+          description: "Created a dynamic Tableau dashboard that cut trend-identification time by 40%."
+        },
+        {
+          title: "Avanse Financial Services Web App",
+          tech: "Python, Django, SQL",
+          date: "Mar 2022 – Apr 2023",
+          description: "Built a user-friendly financial web app to streamline client services and operations."
+        },
+        {
+          title: "Asmita ERPNext – ERP & Data Dashboard",
+          tech: "Python, Django, SQL",
+          date: "Feb 2022",
+          description: "Constructed an ERP web app (CRM, HR, Billing) with strong data modelling and cleanup."
+        }
+      ],
+      education: [
+        {
+          degree: "Master of Computer Applications (MCA)",
+          school: "Dr. A.P.J. Abdul Kalam University",
+          period: "Jun 2021 – Jul 2023",
+          location: "Indore, MP"
+        },
+        {
+          degree: "Master of Business Administration (MBA)",
+          school: "Devi Ahilya Vishwavidyalaya",
+          period: "Apr 2016 – Jul 2018",
+          location: "Indore, MP"
+        },
+        {
+          degree: "Bachelor of Engineering (BE)",
+          school: "Rajiv Gandhi Proudyogiki Vishwavidyalaya",
+          period: "Apr 2012 – Jun 2016",
+          location: "Bhopal, MP"
+        },
+        {
+          degree: "PG Diploma in Computer Applications",
+          school: "Makhanlal Chaturvedi National University",
+          period: "Jan 2016 – Dec 2017",
+          location: "Bhopal, MP"
+        }
+      ],
+      certifications: [
+        "Google Analytics Certification – Great Learning Academy (2024)",
+        "Analyzing & Visualizing Data with Microsoft Power BI (2024)",
+        "AWS Partner Accreditations – Cloud Economics, Sales, Technical (2023)",
+        "Data Analyst Internship – SLA Pvt. Ltd. (Excel, SQL, Power BI)",
+        "Python & Django Development Internship – Kangaroo Software Pvt. Ltd."
+      ]
+    };
+
+    const $ = s => document.querySelector(s);
+
+    function renderSummary() {
+      $('#profileSummary').textContent = data.summary;
+    }
+    function renderSkills() {
+      const c = $('#skillGroups');
+      Object.entries(data.skills).forEach(([grp, skills]) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<h3>${grp}</h3><div>${skills.map(ss => `<span class="skill-tag">${ss}</span>`).join('')}</div>`;
+        c.append(card);
+      });
+    }
+    function renderExperience() {
+      const c = $('#experienceList');
+      data.experience.forEach(exp => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <h3>${exp.role} – <strong>${exp.company}</strong></h3>
+          <span>${exp.period} • ${exp.location}</span>
+          <ul style="margin-top:.6rem; list-style-type:disc;">
+            ${exp.bullets.map(b => `<li>${b}</li>`).join('')}
+          </ul>`;
+        c.append(card);
+      });
+    }
+    function renderProjects() {
+      const c = $('#projectsList');
+      data.projects.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <h3>${p.title}</h3>
+          <span>${p.date} • ${p.tech}</span>
+          <p style="margin-top:.5rem; line-height:1.45; font-size:.9rem;">
+            ${p.description}
+          </p>`;
+        c.append(card);
+      });
+    }
+    function renderEducation() {
+      const ec = $('#educationList');
+      data.education.forEach(e => {
+        const card = document.createElement('div');
+        card.className = 'card';  
+        card.innerHTML = `
+          <h3>${e.degree}</h3>
+          <span>${e.school}</span><br>
+          <span>${e.period} • ${e.location}</span>`;
+        ec.append(card);
+      });
+      const ul = $('#certList');
+      data.certifications.forEach(cert => {
+        const li = document.createElement('li');
+        li.textContent = cert;
+        ul.append(li);
+      });
+    }
+
+    function initTheme() {
+      const btn = $('#themeToggle');
+      btn.onclick = () => {
+        document.body.classList.toggle('dark');
+        btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+      };
+    }
+    function initScrollSpy() {
+      const secs = document.querySelectorAll('section');
+      const links = document.querySelectorAll('nav a');
+      window.addEventListener('scroll', () => {
+        const pos = window.scrollY + 250;
+        secs.forEach(s => {
+          if (pos >= s.offsetTop && pos < s.offsetTop + s.offsetHeight) {
+            links.forEach(l => l.classList.remove('active'));
+            document.querySelector(`nav a[href="#${s.id}"]`).classList.add('active');
+          }
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderSummary();
+      renderSkills();
+      renderExperience();
+      renderProjects();
+      renderEducation();
+      initTheme();
+      initScrollSpy();
+    });
+  </script>
+</body>
+</html>
