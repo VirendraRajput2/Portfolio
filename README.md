@@ -1,5 +1,8 @@
 # Portfolio
 
+Data Analyst & Power BI Developer
+Result-driven Data Analyst with a strong foundation in data visualization, statistical analysis, and business intelligence. Proficient in SQL, Power BI, Tableau, Excel, and Python, with hands-on experience in ETL pipelines, data cleaning, and interactive dashboard creation. Adept at transforming complex datasets into actionable insights that support strategic decision-making and drive business performance.
+
 
 Welcome to my portfolio
 I am Virendra Rajput, currently working as a Data Analyst at Lyceum Gurukul Pvt. Ltd. and formerly a Software Engineer at Kellton Tech Solutions India. Although my academic background is in Master of Computer Applications (MCA) and MBA in Finance & Marketing.I bring a strong foundation in data analytics, business intelligence, and software development.
