@@ -1,7 +1,8 @@
 # Portfolio
 
 <center>
-Data Analyst & Power BI Developer </center>
+<b>Data Analyst & Power BI Developer </b></center>
+<br>
 Result-driven Data Analyst with a strong foundation in data visualization, statistical analysis, and business intelligence. Proficient in SQL, Power BI, Tableau, Excel, and Python, with hands-on experience in ETL pipelines, data cleaning, and interactive dashboard creation. Adept at transforming complex datasets into actionable insights that support strategic decision-making and drive business performance.
 
 
